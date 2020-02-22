@@ -41,7 +41,7 @@ const HeaderBar = (): Object => (
       <LeftSideContainer>
         <AboutMe />
         <Title>
-          MY STORE
+          THE RVVL
         </Title>
       </LeftSideContainer>
       <RightSideContainer>

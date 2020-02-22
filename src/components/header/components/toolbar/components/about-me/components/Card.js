@@ -133,7 +133,7 @@ const AboutMeCard = ({ onToggleCardDialog, openURL, classes }: Props) => (
     className={classes.card}
   >
     <CardMedia
-      image="https://s3-sa-east-1.amazonaws.com/store-system-resources/stenio.jpg"
+      image="https://scontent-hkg3-2.xx.fbcdn.net/v/t1.0-9/84496278_919764308425384_5074505445066932224_o.jpg?_nc_cat=108&_nc_ohc=FnWGdjF9AQkAX-S0GJg&_nc_ht=scontent-hkg3-2.xx&oh=f19f045e5eb3e4d101e706f26408af88&oe=5EFF0525"
       className={classes.media}
       alt="Stenio Wagner"
       component="img"
@@ -144,11 +144,12 @@ const AboutMeCard = ({ onToggleCardDialog, openURL, classes }: Props) => (
         Hey!
       </h3>
       <AboutMeText>
-        I'm Stenio, a Full Stack Engineer with interests in JavaScript world, including NodeJS and, obviously, the React Ecossystem (ReactJS, React-Native, Redux, Redux-Saga and GraphQL).
+        I m fucking Tài, I'm a developer.
+        Don't bother this introduction, please skip it and move on your fucking needed works.
       </AboutMeText>
     </CardContent>
-    {renderSocialContainerItem(openURL, SOCIAL_MEDIA_TYPES.GITHUB)}
-    {renderSocialContainerItem(openURL, SOCIAL_MEDIA_TYPES.LINKEDIN)}
+    {/* {renderSocialContainerItem(openURL, SOCIAL_MEDIA_TYPES.GITHUB)}
+    {renderSocialContainerItem(openURL, SOCIAL_MEDIA_TYPES.LINKEDIN)} */}
     <CloseButtonWrapper>
       <Button
         onClick={onToggleCardDialog}
