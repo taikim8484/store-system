@@ -1,6 +1,6 @@
-import { injectGlobal } from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 
-injectGlobal`
+const GlobalStype = createGlobalStyle`
   * {
     box-sizing:border-box;
     padding:0;
@@ -16,3 +16,5 @@ injectGlobal`
     height: 100vh;
   },
 `;
+
+export default GlobalStype;

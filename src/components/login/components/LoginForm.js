@@ -4,6 +4,9 @@ import React, { Component } from 'react';
 
 import Button from '@material-ui/core/Button';
 
+import { compose } from 'recompose'
+import { withTranslation } from 'react-i18next'
+
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Creators as BudgetCreators } from '../../../store/ducks/budget';
@@ -46,7 +49,7 @@ class LoginForm extends Component<Props, State> {
 
     const userSelected = users.filter(user => ((user.username === username) && (user.password === password)))[0];
 
-    return (userSelected ? this.handleLogin(userSelected) : setSnackbarError('User not Found'));
+    return (userSelected ? this.handleLogin(userSelected) : setSnackbarError('user_not_found'));
   };
 
   handleLogin = (user: Object): void => {
@@ -58,6 +61,7 @@ class LoginForm extends Component<Props, State> {
   };
 
   render() {
+    const { t: translate } = this.props
     const { username, password } = this.state;
 
     return (
@@ -68,7 +72,7 @@ class LoginForm extends Component<Props, State> {
             onChange={(event: Object): void => this.onTypeInputValue('username', event.target.value)}
             onBlur={() => {}}
             value={username}
-            label="Username"
+            label={translate("username")}
             placeholder=""
             id="username"
             type="text"
@@ -81,7 +85,7 @@ class LoginForm extends Component<Props, State> {
           value={password}
           type="password"
           placeholder=""
-          label="Password"
+          label={translate("password")}
           id="password"
           error=""
         />
@@ -92,7 +96,7 @@ class LoginForm extends Component<Props, State> {
             onClick={this.onClickEnterButton}
             color="primary"
           >
-            SIGN IN
+            {translate("signin")}
           </Button>
         </ButtonWrapper>
       </Wrapper>
@@ -104,4 +108,8 @@ const Creators = Object.assign({}, BudgetCreators, AuthCreators);
 
 const mapDispatchToProps = dispatch => bindActionCreators(Creators, dispatch);
 
-export default connect(null, mapDispatchToProps)(LoginForm);
+const enhance = compose(
+  connect(null, mapDispatchToProps),
+  withTranslation(),
+)
+export default enhance(LoginForm);

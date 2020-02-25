@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 
 import Store from '@material-ui/icons/Store';
 import Paper from '@material-ui/core/Paper';
+import Avatar from '@material-ui/core/Avatar';
 
 import styled from 'styled-components';
 
@@ -41,15 +42,11 @@ const IconWrapper = styled.div`
   border-radius: 36px;
 `;
 
-const StoreIcon = styled(Store)`
-  color: ${({ theme }) => theme.colors.white};
-`;
-
-const StoreTitle = styled.p`
+const LargeIcon = styled.img`
+  height: 120px;
+  width: 120px;
+  border-radius: 60px;
   margin: 16px 0;
-  font-size: 28px;
-  font-weight: 500;
-  color: ${({ theme }) => theme.colors.darkText};
 `;
 
 const ContentContainer = styled(({ ...props }) => (
@@ -135,16 +132,7 @@ class Login extends Component<Props, State> {
       <Container>
         <Wrapper>
           <Wrapper>
-            <IconWrapper>
-              <StoreIcon
-                style={{
-                  fontSize: 36,
-                }}
-              />
-            </IconWrapper>
-            <StoreTitle>
-              MY STORE
-            </StoreTitle>
+            <LargeIcon src="https://i.ibb.co/VSB7cBN/rvvl.jpg" />
           </Wrapper>
           <ContentContainer>
             {hasUsersRegistered ? this.renderLoginForm(users) : this.renderRegisterUserForm(createUser, users)}

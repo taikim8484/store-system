@@ -8,7 +8,7 @@ import { Provider } from 'react-redux';
 
 import './i18n';
 import './config/reactotron';
-import './styles/global';
+import GlobalStype from './styles/global';
 
 import Root from './components/Root';
 
@@ -30,6 +30,7 @@ const App = (): Object => (
   <MuiThemeProvider
     theme={theme}
   >
+    <GlobalStype />
     <ThemeProvider
       theme={AppTheme}
     >

@@ -4,6 +4,8 @@ import React, { Component } from 'react';
 
 import Button from '@material-ui/core/Button';
 
+import { withTranslation } from 'react-i18next'
+
 import { Wrapper, InputWrapper, ButtonWrapper } from './styles';
 import Input from '../../common/CustomInput';
 
@@ -52,27 +54,28 @@ class RegisterUserForm extends Component<Props, State> {
       setSnackbarError,
       createUser,
       users,
+      t: translate
     } = this.props;
 
     const isUsernameAlreadyRegistered = this.isUsernameAlreadyRegistered(users, username);
     const isSamePassword = (password === repeatedPassword);
 
     if (!isSamePassword) {
-      setSnackbarError('The passwords are not the same');
+      setSnackbarError('confirm_password_error');
       return;
     }
 
     if (isUsernameAlreadyRegistered) {
-      setSnackbarError('This Username has already in use');
+      setSnackbarError('username_has_already');
       return;
     }
 
     if (password.length < 6) {
-      setSnackbarError('The password must have at least 6 characters');
+      setSnackbarError('password_length_error');
       return;
     }
 
-    setSnackbarMessage('User Registered Successfully');
+    setSnackbarMessage('signup_successfully');
 
     createUser({ username, name, password });
   };
@@ -86,6 +89,7 @@ class RegisterUserForm extends Component<Props, State> {
   };
 
   render() {
+    const { t: translate } = this.props
     const {
       repeatedPassword,
       password,
@@ -105,7 +109,7 @@ class RegisterUserForm extends Component<Props, State> {
             onBlur={() => {}}
             placeholder=""
             value={name}
-            label="Name"
+            label={translate("name")}
             type="text"
             id="name"
             error=""
@@ -116,7 +120,7 @@ class RegisterUserForm extends Component<Props, State> {
             onChange={(event: Object): void => this.onTypeInputValue('username', event.target.value)}
             onBlur={() => {}}
             value={username}
-            label="Username"
+            label={translate("username")}
             placeholder=""
             id="username"
             type="text"
@@ -130,7 +134,7 @@ class RegisterUserForm extends Component<Props, State> {
             value={password}
             type="password"
             placeholder=""
-            label="Password"
+            label={translate("password")}
             id="password"
             error=""
           />
@@ -140,7 +144,7 @@ class RegisterUserForm extends Component<Props, State> {
             onChange={(event: Object): void => this.onTypeInputValue('repeatedPassword', event.target.value)}
             value={repeatedPassword}
             onBlur={() => {}}
-            label="Confirm the Password"
+            label={translate("confirm_password")}
             id="repeatedPassword"
             placeholder=""
             type="password"
@@ -154,7 +158,7 @@ class RegisterUserForm extends Component<Props, State> {
             variant="outlined"
             color="primary"
           >
-            SIGN UP
+            {translate('signup')}
           </Button>
         </ButtonWrapper>
       </Wrapper>
@@ -162,4 +166,4 @@ class RegisterUserForm extends Component<Props, State> {
   }
 }
 
-export default RegisterUserForm;
+export default withTranslation()(RegisterUserForm);

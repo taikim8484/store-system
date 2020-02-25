@@ -14,8 +14,8 @@ import Paper from '@material-ui/core/Paper';
 import Grow from '@material-ui/core/Grow';
 
 import FilterIcon from '@material-ui/icons/FilterList';
-import ExpandMore from '@material-ui/icons/ExpandMore';
-import ExpandLess from '@material-ui/icons/ExpandLess';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import ExpandLessIcon from '@material-ui/icons/ExpandLess';
 
 import styled from 'styled-components';
 
@@ -66,15 +66,17 @@ const TextBoxWrapper = styled.div`
   background-color: ${({ theme, disabled }) => (disabled ? theme.colors.lightGray : theme.colors.white)};
 `;
 
-const ExpandLessIcon = styled(ExpandLess)`
-  color: ${({ theme }) => theme.colors.white};
-  margin-left: 8px;
-`;
+// const StyledExpandLessIcon = styled(ExpandLessIcon)`
+//   && {
+//     color: ${({ theme }) => theme.colors.white};
+//     margin-left: 8px;
+//   }
+// `;
 
-const ExpandMoreIcon = styled(ExpandMore)`
-  color: ${({ theme }) => theme.colors.white};
-  margin-left: 8px;
-`;
+// const ExpandMoreIcon = styled(ExpandMore)`
+//   color: ${({ theme }) => theme.colors.white};
+//   margin-left: 8px;
+// `;
 
 const SelectorContent = styled.div`
   display: flex;

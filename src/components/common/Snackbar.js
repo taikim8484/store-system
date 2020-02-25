@@ -13,6 +13,7 @@ import InfoIcon from '@material-ui/icons/Info';
 
 import styled from 'styled-components';
 import AppTheme from '../../styles';
+import { useTranslation } from 'react-i18next';
 
 const STYLES = {
   SUCCESS: 'SUCCESS',
@@ -89,6 +90,7 @@ const renderContent = (type: string, message: string, onCloseSnackbar: Function)
 };
 
 const getConfiguration = (message: any, error: any): Object => {
+  console.log("TCL: message", message)
   let text;
   let type;
 
@@ -121,7 +123,8 @@ const CustomSnackbar = ({
   isOpen,
   error,
 }: Props): Object => {
-  const { text, type } = getConfiguration(message, error);
+  const { t: translate } = useTranslation()
+  const { text, type } = getConfiguration(translate(message), translate(error))
 
   const shouldRenderContent = (!!type && !!text);
 
