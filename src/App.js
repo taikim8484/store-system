@@ -6,6 +6,7 @@ import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import styled, { ThemeProvider } from 'styled-components';
 import { Provider } from 'react-redux';
 
+import './i18n';
 import './config/reactotron';
 import './styles/global';
 

@@ -9,35 +9,35 @@ import People from '@material-ui/icons/People';
 
 const items = [{
   Icon: Contacts,
-  title: 'CASHIER',
+  titleKey: 'CASHIER',
   route: '/dashboard/cashier',
 }, {
   Icon: ShoppingCart,
-  title: 'SALES',
+  titleKey: 'SALES',
   route: '/dashboard/sale',
 }, {
   Icon: LocalOffer,
-  title: 'PRODUCTS',
+  titleKey: 'PRODUCTS',
   route: '/dashboard/product',
 }, {
   Icon: Stock,
-  title: 'STOCK',
+  titleKey: 'STOCK',
   route: '/dashboard/stock',
 }, {
   Icon: Assignment,
-  title: 'BUDGETS',
+  titleKey: 'BUDGETS',
   route: '/dashboard/budget',
 }, {
   Icon: People,
-  title: 'CUSTOMERS',
+  titleKey: 'CUSTOMERS',
   route: '/dashboard/customer',
 }, {
   Icon: LocalShipping,
-  title: 'PROVIDERS',
+  titleKey: 'PROVIDERS',
   route: '/dashboard/provider',
 }, {
   Icon: AccountCircle,
-  title: 'USERS',
+  titleKey: 'USERS',
   route: '/dashboard/user',
 }];
 

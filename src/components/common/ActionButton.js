@@ -70,7 +70,7 @@ const ActionButton = ({
   disabled,
   action,
   title,
-}: Props): Obejct => (
+}: Props): Object => (
   <ButtonContainer
     onClick={() => action()}
     disabled={disabled}
